@@ -25,4 +25,9 @@ RSpec.describe Board do
 
     end 
 
+    it "randomley places peach at one of the corners" do 
+        board = Board.new(3, ["---", "-m-", "p--"])
+        expect(board.princess_placemnt).to eq([0,0]).or eq([(board.board_size - 1),0]).or eq([0,(board.board_size - 1)]).or eq([(board.board_size - 1),(board.board_size - 1)])
+    end 
+
 end 
