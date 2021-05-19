@@ -17,7 +17,10 @@ class Board
 
     def find_princess_placement
       princess_xy = []
-      corner_positions = [0,0],[@board_size - 1,0],[0,@board_size - 1],[@board_size - 1,@board_size - 1]
+      corner_positions = [0,0],
+                         [@board_size - 1,0],
+                         [0,@board_size - 1],
+                         [@board_size - 1,@board_size - 1]
         corner_positions.each do |position|
           princess_xy << position if @board[position[0]][position[1]] == 'p'
          end
