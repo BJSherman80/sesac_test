@@ -19,13 +19,15 @@ RSpec.describe Board do
 
     it "places bot in the middle of the board" do 
         board = Board.new(3, ["---", "-m-", "p--"])
-        board_1 = Board.new(9, ["---", "-m-", "p--"])
         expect(board.bot_placement).to eq([1,1])
-        expect(board_1.bot_placement).to eq([4,4])
-
     end 
 
-    it "randomley places peach at one of the corners" do 
+    it "places bot in middle of board w/ different length" do 
+        board_1 = Board.new(5, ["-----", "-----", "--m--", "-----", "p----"])
+        expect(board_1.bot_placement).to eq([2,2])
+    end
+
+    it "find peach on board " do 
         board = Board.new(3, ["---", "-m-", "p--"])
         expect(board.princess_placement).to eq([2,0])
     end 
