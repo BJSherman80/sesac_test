@@ -1,26 +1,28 @@
 require './board'
+require './mario'
+require './princess'
 
 class SavePrincess
   attr_reader :board,
-              :bot_location,
-              :princess_location,
+              :mario,
+              :princess,
               :row_difference,
               :column_difference
 
   def initialize(board_size, board)
     @board = Board.new(board_size, board)
-    @bot_location = @board.bot_placement
-    @princess_location = @board.princess_placement
+    @princess = Princess.new(@board)
+    @mario = Mario.new(@board)
     @row_difference = row_difference
     @column_difference = column_difference
   end
 
   def row_difference 
-    row_distance = @bot_location[1] - @princess_location[1]
+    row_distance = @mario.row_placement - @princess.row_placement
   end
 
   def column_difference
-    column_distance = @bot_location[0] - @princess_location[0] 
+    column_distance = @mario.column_placement - @princess.column 
   end
 
   def path_to_princess
