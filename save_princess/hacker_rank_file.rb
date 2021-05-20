@@ -26,7 +26,7 @@ class Board
        end
     princess_xy.flatten
   end
-end 
+end
 
 class Mario 
   attr_reader :column,
