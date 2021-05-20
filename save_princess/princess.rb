@@ -2,18 +2,19 @@ require './board'
 
 class Princess
   attr_reader :column,
-              :row 
+              :row
 
   def initialize(board)
-    @column = column_placemnet(board)
-    @row = row_placment(board)
+    @board = board
+    @column = column_placement
+    @row = row_placement
   end
 
-  def column_placemnet(board)
-    board.princess_placement[0]
+  def column_placement
+    @board.princess_placement[0]
   end 
 
-  def row_placment(board)
-    board.princess_placement[1]
+  def row_placement
+    @board.princess_placement[1]
   end
 end 
