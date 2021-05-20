@@ -24,7 +24,7 @@ class SavePrincess
     column_distance = @mario.column_placement - @princess.column 
   end
 
-  def path_to_princess
+  def next_move
     if @row_difference.zero?
         horizontal
     else

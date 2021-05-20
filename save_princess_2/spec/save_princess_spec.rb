@@ -14,20 +14,20 @@ RSpec.describe SavePrincess do
 
     it 'should print down' do
         game = SavePrincess.new(3,1,1, ["---", "-m-", "p--"])
-        expect(game.path_to_princess).to eq("DOWN")
+        expect(game.next_move).to eq("DOWN")
     end
 
     it 'should print up' do
         game = SavePrincess.new(5,3,2, ["-----", "----p", "-----" "--m--", "-----"])
-        expect(game.path_to_princess).to eq("UP")
+        expect(game.next_move).to eq("UP")
     end
     it 'should print right' do
         game = SavePrincess.new(5,1,0, ["-----", "m---p", "-----", "-----", "-----"])
-        expect(game.path_to_princess).to eq("RIGHT")
+        expect(game.next_move).to eq("RIGHT")
     end
     it 'should print left' do
         game = SavePrincess.new(5,1,4, ["-----", "p---m", "-----", "-----", "-----"])
-        expect(game.path_to_princess).to eq("LEFT")
+        expect(game.next_move).to eq("LEFT")
     end
  
   end
