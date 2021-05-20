@@ -6,10 +6,20 @@ require './save_princess'
 RSpec.describe SavePrincess do 
   it 'should have attributes and instance of a board' do
     game = SavePrincess.new(3, ["---", "-m-", "p--"])
+ 
     expect(game.board).to be_a Board 
-    expect(game.bot_location).to eq([1,1])
-    expect(game.princess_location).to eq([2,0])
+    expect(game.mario).to be_a Mario
+    expect(game.princess).to be_a Princess
   end
+
+  it 'can find the cordinates for princess and mario' do 
+    game = SavePrincess.new(3, ["---", "-m-", "p--"])
+
+    expect(game.mario.row_placement).to eq(1)
+    expect(game.mario.column_placement).to eq(1)
+    expect(game.princess.row_placement).to eq(0)
+    expect(game.princess.column_placement).to eq(2)
+  end 
 
   it 'can find placement differences' do 
     game = SavePrincess.new(3, ["---", "-m-", "p--"])
